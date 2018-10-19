@@ -1,0 +1,4 @@
+xbrhel04 100 (Vytvoření testů pro matematickou knihovnu, vytvoření matematické knihovny)
+xletov00 100 (Vytvoření UI + spojení s knihovnou)
+xermak00 100 (Vytvoření dokumentace, readme.txt, uživatelské příručky)
+xlukac10 100 (Vytvoření mockupu, instalačního souboru, profiling)

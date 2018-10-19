@@ -1,0 +1,207 @@
+#/bin/sh
+###		 PARAMETERS		##
+if [ $# -gt 4 ]; then
+	echo "Error - too much arguments"
+	exit
+fi
+while [ $# -gt 0 ]; do
+	###		Parameter -i 	###
+	if [ "$1" == "-i" ]; then
+		if [ -z $2 ]; then
+			echo "Error - regular expression missing"
+			exit
+		fi
+		shift
+		ignoredfiles="$1"
+		shift
+	fi
+	###		Parameter -n 	###
+	if [ "$1" == "-n" ]; then
+		normalize="true"
+		test	
+		if [[ $? = 1 ]]; then
+			width=$(tput cols)
+		else	
+			((width=79))
+		fi
+		shift
+	fi
+	###		Parameter -dir ###
+	if [ "$1" != "-n" ] && [ "$1" != "-i" ]; then
+		directory="$1"
+		shift
+	fi
+
+done
+
+###		HISTOGRAM	###
+((width_h=width-13))
+((tmpwidth=width-12))
+
+if [ -z "$directory" ]; then
+	directory="./"
+fi
+if [ -z "$ignoredfiles" ]; then
+	ignoredfiles=""
+fi
+echo "Root directory: $directory"
+
+nd=$(find $directory -type d 2> /dev/null ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+if [ $directory == 0 ]; then
+	directory="1"
+fi
+echo "Directories: $nd"
+
+
+nf=$(find $directory -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+echo "All files: $nf"
+
+###		< 100 B 	###
+echo "File size histogram:"
+size100b=$(find $directory -size -100c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <100 B  : "
+if [[ size100b -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size100b=width_h))
+fi
+while [ $size100b -ne 0 ]; do
+	printf "#"
+	((size100b=size100b-1))
+done
+printf "\n"
+
+### 	< 1 KiB 	###
+size1kib=$(find $directory -not -size -100c -size -1024c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <1 KiB  : "
+if [[ size1kib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size1kib=width_h))
+fi
+while [ $size1kib -ne 0 ]; do
+	printf "#"
+	((size1kib=size1kib-1))
+done
+printf "\n"
+
+###		< 10 KiB 	###
+size10kib=$(find $directory -not -size -1024c -size -10240c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <10 KiB : "
+if [[ size10kib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size10kib=width_h))
+fi
+while [ $size10kib -ne 0 ]; do
+	printf "#"
+	((size10kib=size10kib-1))
+done
+printf "\n"
+
+###		< 100 KiB 	###
+size100kib=$(find $directory -not -size -10240c -size -102400c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <100 KiB: "
+if [[ size100kib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size100kib=width_h))
+fi
+while [ $size100kib -ne 0 ]; do
+	printf "#"
+	((size100kib=size100kib-1))
+done
+printf "\n"
+
+###		< 1 MiB		###
+size1mib=$(find $directory -not -size -102400c -size -1048576c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <1 MiB  : "
+if [[ size1mib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size1mib=width_h))
+fi
+while [ $size1mib -ne 0 ]; do
+	printf "#"
+	((size1mib=size1mib-1))
+done
+printf "\n"
+
+###		< 10 MiB	###
+size10mib=$(find $directory -not -size -1048576c -size -10485760c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <10 MiB : "
+if [[ size10mib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size10mib=width_h))
+fi
+while [ $size10mib -ne 0 ]; do
+	printf "#"
+	((size10mib=size10mib-1))
+done
+printf "\n"
+
+###		< 100 MiB	###
+size100mib=$(find $directory -not -size -10485760c -size -104857600c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <100 MiB: "
+if [[ size100mib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size100mib=width_h))
+fi
+while [ $size100mib -ne 0 ]; do
+	printf "#"
+	((size100mib=size100mib-1))
+done
+printf "\n"
+
+###		< 1 GiB		###
+size1gib=$(find $directory -not -size -104857600c -size -1073741824c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  <1 GiB  : "
+if [[ size1gib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((size1gib=width_h))
+fi
+while [ $size1gib -ne 0 ]; do
+	printf "#"
+	((size1gib=size1gib-1))
+done
+printf "\n"
+
+###		>= GiB 		###
+sizem1gib=$(find $directory -not -size -1073741824c -type f ! -name "$ignoredfiles" 2> /dev/null | wc -l)
+
+printf "  >=1 GiB : "
+if [[ sizem1gib -gt tmpwidth && "$normalize" = "true" ]]; then
+	((sizem1gib=width_h))
+fi
+while [ $sizem1gib -ne 0 ]; do
+	printf "#"
+	((sizem1gib=sizem1gib-1))
+done
+printf "\n"
+
+###		FILE TYPE histogram 	###
+((width_t=width-47))
+((tmpwidth=width-46))
+
+echo "File type histogram:"
+find $directory -type f ! -name "$ignoredfiles" -exec file -b {} \; 2>/dev/null | colrm 42 | sort 2>/dev/null | uniq -c | head | sort -r -n | while read line; do
+	filetype=$(echo "$line" | sed -r 's/[0-9]+ //g')
+	numberoffiles=$(echo "$line" | sed -r 's/ .*$//g')
+	if [[ numberoffiles -gt tmpwidth && "$normalize" = "true" ]]; then
+		((numberoffiles=width_t))
+	fi
+	if [ "${#filetype}" -gt "40" ]; then
+		printf "  ${filetype:0:39}..."
+	else
+		len=${#filetype}		
+		((len=42-len))
+		printf "  $filetype"
+
+	fi
+	while [ $len -ne 0 ]; do
+		printf " "
+		((len=len-1))
+	done
+	printf ": "
+	while [ $numberoffiles -ne 0 ]; do
+		printf "#"
+		((numberoffiles=numberoffiles-1))
+	done
+	printf "\n"
+
+done
