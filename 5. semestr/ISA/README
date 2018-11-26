@@ -1,0 +1,42 @@
+Aplikace: Sniffer RIP paketů a podvrhávač RIP response zpráv
+Autor: Zdeněk Brhel
+Login: xbrhel04
+
+Spouštění podvrhávače:
+./myripresponse -i <rozhraní> -r <IPv6>/[16-128] {-n <IPv6>} {-m [0-16]} {-t [0-65535]}, kde význam parametrů je následující: 
+* -i: <rozhraní> udává rozhraní, ze kterého má být útočný paket odeslán;
+* -r: v <IPv6> je IP adresa podvrhávané sítě a za lomítkem číselná délka masky sítě;
+* -m: následující číslo udává RIP Metriku, tedy počet hopů, implicitně 1;
+* -n: <IPv6> za tímto parametrem je adresa next-hopu pro podvrhávanou routu, implicitně ::;
+* -t: číslo udává hodnotu Router Tagu, implicitně 0.
+
+Spouštění snifferu:
+./myripsniffer -i <rozhraní>, kde význam parametru je následující:
+* -i: <rozhraní> udává rozhraní, na kterém má být odchyt paketů prováděn. 
+
+U syntaxe vstupních voleb jednotlivým programům složené závorky {} znamenají, že volba je nepovinná.
+
+Překlad aplikace:
+Ve složce s tímto souborem stačí zavolat příkaz make, do této složky se pak vygenerují 2 spustitelné soubory.
+
+Hierarchie
+--./
+  |---./response
+  |        |  - main.cpp
+  |        |  - controller.cpp
+  |        |  - controller.h
+  |        |  - smuggler.cpp
+  |        |  - smuggler.h
+  |        |  - Makefile
+  |
+  |---./sniffer
+  |        |  - main.cpp
+  |        |  - controller.cpp
+  |        |  - controller.h
+  |        |  - sniffer.cpp
+  |        |  - sniffer.h
+  |        |  - Makefile
+  |
+  |---./manual.pdf
+  |---./Makefile
+  |---./README
