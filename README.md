@@ -2,6 +2,7 @@
 Studium na VUT FIT v Brně 2016 - ?2019?
 
 1. semestr
+
 	IUS - projekt v UML na téma Mafie
 	IZP - 3 projekty pro naučení se v jazyce C a následně pak projekt na dokumentaci
 		1. projekt - práce s textem
