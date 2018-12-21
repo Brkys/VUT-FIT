@@ -1,0 +1,26 @@
+body {
+	background-color: black !important;
+}
+
+#navbar {
+	position: fixed;
+	margin-top: 0px;
+	width: 100%;
+	z-index: 80;
+}
+
+#custom-table {
+	border-radius: 5px; 
+	margin: 0px auto; 
+	float: none; 
+}
+
+#myInput {
+    background-position: 10px 12px;
+    background-repeat: no-repeat; 
+    width: 100%; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+}
