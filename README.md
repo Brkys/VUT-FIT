@@ -40,4 +40,5 @@ Studium na VUT FIT v Brně 2016 - ?2019?
 
 5. semestr
   |-- ISA - projekt na sniffování RIP packetů/podvrhávač response zpráv
+  |-- IMP - projekt, MSP430 / ARM-FITkit3: Jednoduchý hudební nástroj
 	Currently living it (pain in ass)
