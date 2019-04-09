@@ -46,6 +46,6 @@ Studium na VUT FIT v Brně 2016 - ?2019?
 6. semestr
    |--	ITW - 2 projekty, webovky
    |     |---   Základy CSS
-   |     |---   Statická webová stránka kavárny (TODO)
-   |--	IBT - bakalářská práce (TODO)
+   |     |---   Statická webová stránka kavárny ( TODO )
+   |--	IBT - bakalářská práce ( TODO )
   
