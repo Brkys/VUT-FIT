@@ -39,6 +39,13 @@ Studium na VUT FIT v Brně 2016 - ?2019?
 	 |---	2. vytvoření kalkulačky
 
 5. semestr
-  |-- ISA - projekt na sniffování RIP packetů/podvrhávač response zpráv
-  |-- IMP - projekt, MSP430 / ARM-FITkit3: Jednoduchý hudební nástroj
-	Currently living it (pain in ass)
+   |--  ISA - projekt na sniffování RIP packetů/podvrhávač response zpráv
+   |--  IMP - projekt, MSP430 / ARM-FITkit3: Jednoduchý hudební nástroj
+   |--  IIS - projekt - webová aplikace, informační systém
+  
+6. semestr
+   |--	ITW - 2 projekty, webovky
+   |     |---   Základy CSS
+   |     |---   Statická webová stránka kavárny (TODO)
+   |--	IBT - bakalářská práce (TODO)
+  

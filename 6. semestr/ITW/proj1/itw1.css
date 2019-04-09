@@ -1,0 +1,357 @@
+body {
+	font-family: Arial;
+	margin: 5px;
+}
+
+html {
+	width: 100%;
+	min-width: 650px;
+}
+
+h1 {
+	font-size: 36px;
+	color: white;
+}
+h2 {
+	font-size: 24px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.main-title {
+	background-image: url("./img/img-jumbotron-bg.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	float: none;
+	padding-left: 13%;
+	padding-right: 13%;
+}
+
+.event-date {
+	margin-top: 40px;
+	font-size: 24px;
+}
+
+.main-title > .content {
+	text-align: center;
+	color: white;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.main-title > .content > h1 {
+	font-size: 64px;
+    margin-left: -2%;
+    margin-right: -2%;
+}
+
+a.btn {
+	border: 2px solid white;
+	padding: 1rem;
+}
+
+a:hover {
+	transition: 0.3s;
+	color: #fd367e;
+}
+
+a.btn:hover {
+	transition: 0.3s;
+	border: 2px solid #fd367e;
+}
+
+.main-title .lead {
+	color: lightgray;
+	line-height: 2rem;
+	padding-bottom: 30px;
+	font-size: 24px;
+}
+
+.logo {
+	overflow: hidden;
+	float: left;
+}
+nav {
+	overflow: hidden;
+	float: right;
+}
+
+nav > ul {
+	list-style: none;
+	overflow: hidden;
+}
+
+nav > ul > li {
+	display: inline;
+	padding: 5px;
+}
+
+header {
+	position: relative;
+	top: 30px;
+}
+
+.content {
+	max-width: 1170px;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+#section-intro {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.about-event > .content {
+	color: #444444;
+	font-size: 19px;
+	overflow: auto;
+	line-height: 2rem;
+}
+
+.about-event .lead {
+	float: left;
+	overflow: hidden;
+	width: 750px;
+	max-width: 100%;
+}
+
+.contact {
+	padding-top: 20px;
+	font-size: 15px;
+	line-height: 1.5rem;
+}
+address {
+	font-style: normal;
+}
+
+section#section-speaker{
+	background-color: #efefef;
+	background-size: 100% 100%;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	overflow: auto;
+}
+
+.section-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.section-content > .thumbnail{
+	display: inline-block;
+	margin: 15px;
+}
+
+.section-title > h2 {
+	color: #1a3156;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 36px;
+	text-align: center;
+	display: block;
+}
+
+figure.thumbnail {
+	width: 22%;
+	min-width: 190px;
+	height: auto;
+}
+
+figure.thumbnail img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+figcaption > h3 {
+	color: #1e1c87;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+figcaption > h3 > small {
+	display: block;
+	color: black;
+	font-weight: normal;
+}
+
+#section-agenda  {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+#section-pricing {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: #efefef;
+	background-size: 100% 100%;
+	overflow: auto;
+}
+
+#section-partner {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	overflow: auto;
+}
+
+#section-partner > .content  {
+  text-align: center;
+}
+
+#section-partner > .content > .partner  {
+  display: inline-block;
+}
+
+.copyright-section {
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.copyright-section > .content {
+	color: #a3a1a1;
+	font-size: 12px;
+}
+
+.copyright-section a {
+	color: #fd367e;
+}
+
+.section-title > p {
+	color: #444444;
+	font-size: 19px;
+	text-align: center;
+}
+
+#section-pricing > .content {    
+	text-align: center;
+}
+
+.pricing-table-default {
+	width: 30%;
+	min-width: 350px;
+	margin: 10px;
+	display: inline-block;
+	background-color: white;
+	min-height: 380px;
+}
+
+.pricing-table-default a.btn {
+	background-color: #fd367e;
+	padding: 1rem;
+	border: 0;
+	color: white;
+}
+
+.pricing-table-default a.btn:hover {
+	transition: 0.3s;
+	border: 2px solid #fd367e;
+	background-color: transparent;
+	color: #fd367e;
+}
+
+.pricing-detail > ul {
+	list-style: none;
+}
+
+.pricing-table-default > .pricing-head {
+	width: 100%;
+}
+
+.pricing-table-default > .pricing-head h3 {
+	width: 100%;
+	font-size: 15px;
+	color: #efefef;
+	text-transform: uppercase;
+	padding-top: 1rem;
+	background-color: #1a3156;
+	margin-top: 0px;
+	height: 2rem;
+	margin-bottom: 2rem;
+}
+
+.pricing-table-default > .pricing-head .price {
+	font-weight: bold;
+	font-size: 54px;
+	color: #3d3d3d;
+}
+
+.pricing-table-default > .pricing-head sup {
+	font-size: 20px;
+}
+
+.pricing-table-default > .pricing-detail ul {
+	padding-left: 0px;
+	color: #3d3d3d;
+	line-height: 3rem;
+	font-weight: bold;
+}
+
+#section-agenda > .content {
+	text-align: center;
+	overflow: auto;
+}
+
+.agenda-part {
+	width: 30%;
+	min-width: 350px;
+	display: inline-block;
+	margin: 10px;
+	vertical-align: top;
+	text-align: left;
+	float: left;
+	overflow: hidden;
+	height: 100%;
+}
+
+.agenda-part > .session {
+	padding-top: 10px;
+	margin-bottom: 60px;
+}
+
+.agenda-part time {
+	width: 40%;
+	height: 4rem;
+	padding: 20px;
+	font-size: 18px;
+	border-left: #efefef solid 1px;
+	border-bottom: #efefef solid 1px;
+}
+
+.agenda-part h3 {
+	color: #1e1c87;
+	font-size: 30px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-weight: lighter;
+	padding: 20px;
+	padding-top: 30px;
+	display: block;
+	border-left: #efefef solid 1px;
+}
+
+.agenda-part > .session > h4 > span {
+	width: 100%;
+	white-space: nowrap;
+	float: right;
+	font-size: 16px;
+}
+
+.agenda-part > .session > h4 {
+	color: #1e1c87;
+	font-size: 22px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-weight: lighter;
+	padding: 20px;
+	border-left: #efefef solid 1px;
+	text-transform: uppercase;
+}
