@@ -1,0 +1,408 @@
+body {
+	font-family: 'Hind', sans-serif;
+	margin: 0px;
+	min-width: 650px;
+}
+
+header {
+	height: 400px;
+	background-color: #6d4917;	
+	line-height: 400px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+header a {
+	width: auto;
+	height: 60%;
+	color: white;
+	font-size: 5rem;	
+}
+header img {
+	width: auto;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+h4 {
+	text-transform: uppercase;
+	margin: 0;
+}
+
+nav {
+	font-size: 1.5rem;
+	background-color: #371c00;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	z-index: 1;
+}
+
+.sticky {
+	transition: 1s;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.5;
+	min-width: 650px;
+}
+
+.sticky:hover {
+	transition: 0.3s;
+	opacity: 1;
+}
+
+nav a {
+	color: white;
+	text-transform: uppercase;
+	padding: 10px;
+	align-self: flex-end;
+}
+
+nav a:visited {
+	color: white;
+	text-transform: uppercase;
+}
+
+nav a:hover {
+	color: lightgray;
+}
+
+.section-welcome {
+	background-image: url("../images/coffee-repeat.jpg");
+	height: 400;
+}
+
+.content {
+	padding: 80px;
+	padding-right: 30%;
+	padding-left: 30%;
+	overflow: hidden;
+}
+.section-main > .content > p {
+	text-align: justify;
+}
+
+.section-welcome > .content {
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.section-welcome > .content > a {
+	color: white;
+	padding: 5px;
+	border: 2px solid #371c00;
+	background-color: #5e360b;
+}
+
+
+.section-welcome > .content > a:hover {
+	transition: 0.5s;
+	background-color: #371c00;
+}
+
+.section-main {
+	background-color: lightgray;
+}
+
+footer {
+	background-color: #371c00;
+	color: white;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 50px;
+	padding-right: 20%;
+	padding-left: 20%;
+}
+
+.open-hours {
+	float: left;
+}
+
+footer ul {
+	list-style: none;
+	padding-left: 0px;
+	min-width: 400px;
+}
+
+footer ul > li {
+	border-bottom: 1px white dashed;
+}
+
+.open-time {
+	float: right;
+}
+
+.mapouter {
+	float:left;
+	height: 250px;
+	width: 55%;
+	min-width: 400px;,
+	text-align:right;
+}
+#googlemap {
+	overflow:hidden;
+	background:none;
+	width: 100% !important;
+	height: 250px !important;
+}
+
+#contact-us {
+	position: fixed;
+	bottom: 0;
+	right: 50px;
+	width: 200px;
+	height: 50px;
+	background-color: #6d4917;
+	border-top-right-radius:10px; 
+	border-top-left-radius:10px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#contact-us:hover {
+	background-color: #875816;
+}
+
+#contact h2 {
+	text-align: left;
+}
+
+.content ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.menu li {
+	border-bottom: 1px black dashed;
+}
+
+.price {
+	float: right;
+}
+
+.price:after {
+	content: " Kč"
+}
+
+.cake {
+	background-color: white;
+	overflow: hidden;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	position: relative;
+}
+
+.cake p {
+	margin-bottom: 0;
+	text-align: justify;
+}
+
+.cake > .price {
+	padding-top: 1rem;
+	margin-right: 10px;
+}
+
+.cakes {
+	margin-top: 20px;
+}
+
+.cake > img {
+	padding-right: 20px;
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	min-width: 240px;
+	max-width: 300px;
+	height: 200px;
+	display: block;
+	object-fit: cover;
+}
+
+@media (max-width: 1740px) {
+	.cake >img {
+		max-width: 100%;
+	}
+}
+
+#contact-dialog {
+	position: fixed;
+	bottom: 0;
+	right: 0px;
+	width: 400px;
+	height: 400px;
+	background-color: #6d4917;
+	border-top-right-radius:10px; 
+	border-top-left-radius:10px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+}
+#contact-dialog > .cross {
+	color: red;
+	font-size: 3rem;
+	position: absolute;
+	right: 15px;
+	top: 5px;
+}
+
+#contact-dialog > .cross:hover {
+	cursor: pointer;
+}
+
+hr {
+	margin: 0;
+}
+
+form > h5 {
+	margin: 0;
+	height: 2rem;
+}
+
+form > textarea {
+	height: 80px;
+	width: 300px;
+}
+form > input {
+	width: 300px;
+}
+
+.section-main .contact {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.section-main .contact p {
+	width: 62%;
+	padding-right: 1em;
+	text-align: justify;
+}
+
+
+.address {
+	width: 30%;
+	min-width: 180px;
+	padding: 1em;
+	border-left: darkgray 1px solid;
+}
+
+.address ul {
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+@media (max-width: 1550px) {
+	.section-main .contact p {
+		width: 100%;
+	}
+	.address {
+		width: 100%;
+		border-left: none;
+		padding-left: 0;
+		text-align: center;
+	}
+}
+@media print {
+	nav {
+		display: none !important;
+	}
+	#contact-us {
+		display: none !important;
+	}
+	#contact-dialog {
+		display: none !important;
+	}
+	.content {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.photos {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.photos .photo {
+	width: 33%;
+	min-width: 200px;
+	height: 200px;
+	padding-top: 20px;
+}
+
+.photo img {
+	width: 100%;
+	height: 95%;
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+.photo h5 {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: white;
+	text-align: center;
+}
+
+@media (max-width: 1540px) {
+	.photos .photo {
+		width: 48%;
+	}
+}
+@media (max-width: 1100px) {
+	.photos .photo {
+		width: 100%;
+	}
+}
+
+iframe {
+	border: none;
+	margin: 0px;
+	overflow: hidden;
+}
+
+.new {
+	border-bottom: solid 1px darkgray; 
+	overflow: hidden;
+	width: 48%;
+}
+
+.new .date {
+	float: right;
+	bottom: 0;
+}
+
+.news {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+@media (max-width: 1100px) {
+	.new {
+		width: 100%;
+	}
+}

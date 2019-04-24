@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vine & Coffee</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+	<script src="scripts/script.js"></script>
+	<script>
+	$(document).ready(function () {
+		if(Cookies.get('contact-dialog-shown', { path: '/' }) === "true")
+			toggleDialog();
+
+		var name = document.getElementById("form-name");
+		var mail = document.getElementById("form-mail");
+		var subject = document.getElementById("form-subject");
+
+		var nameValue = Cookies.get('contact-dialog-name', { path: '/' });
+		var mailValue = Cookies.get('contact-dialog-email', { path: '/' });
+		var subjectValue = Cookies.get('contact-dialog-subject', { path: '/' });
+
+		name.value = nameValue === undefined ? "" : Cookies.get('contact-dialog-name', { path: '/' });
+		mail.value = mailValue === undefined ? "" : Cookies.get('contact-dialog-email', { path: '/' });
+		subject.value = subjectValue === undefined ? "" : Cookies.get('contact-dialog-subject', { path: '/' });
+	});
+	</script>
+	<noscript>
+		<style>
+			.contact-us {
+				display: none;
+			}
+			.contact-dialog {
+				display: block;
+			}
+			.cross {
+				display: none;
+			}
+		</style>
+	</noscript>
+</head>
+<body>
+	<header> 
+		<a href="http://www.stud.fit.vutbr.cz/~xbrhel04/" target="_parent">
+			<img src="images/logo.png" alt="Wine & Coffee">
+		</a>
+	</header>
+
+	<nav id="nav">
+	  <a href="index.html">Domů</a>
+	  <a href="menu.html">Nabídka</a>
+	  <a href="#">Fotogalerie</a>
+	  <a href="contact.html">Kontakt</a>
+	</nav>
+
+	<section class="section-main">
+		<div class="content">
+			<h1>Fotogalerie</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+			</p>
+			<div class="photos">
+				<div class="photo">
+					<img alt='photo' src="images/photo1.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo2.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo3.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo4.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo5.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo6.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo7.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo8.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+				<div class="photo">
+					<img alt='photo' src="images/photo9.jpg">
+					<h5>Lorem ipsum</h5>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="open-hours">
+			<h4>Otvírací hodiny</h4>
+			<ul>
+				<li>Po<span class="open-time">8:00 - 18:00</span></li>
+				<li>Út<span class="open-time">8:00 - 20:00</span></li>
+				<li>St<span class="open-time">8:00 - 20:00</span></li>
+				<li>Čt<span class="open-time">8:00 - 20:00</span></li>
+				<li>Pá<span class="open-time">8:00 - 20:00</span></li>
+				<li>So<span class="open-time">8:00 - 18:00</span></li>
+				<li>Ne<span class="open-time">Zavřeno</span></li>
+			</ul>
+		</div>
+		<div class="mapouter">
+			<h4>Mapa</h4>
+			<iframe id="googlemap" src="https://maps.google.com/maps?q=Purky%C5%88ovy%20koleje&t=&z=17&ie=UTF8&iwloc=&output=embed"></iframe>		
+		</div>
+	</footer>
+
+	<section id="contact-dialog" style="display: none;">
+		<div class="cross" onclick="toggleDialog()">&times;</div>
+		<h4>Kontaktní formulář</h4>
+		<hr>
+		<form action="#"> <!-- TODO jméno akce -->
+			<h5>Jméno</h5>
+			<input type="text" id="form-name" onchange="saveDialog()" name="name" placeholder="Vaše jméno...">
+			<h5>E-mail</h5>
+			<input type="text" id="form-mail" onchange="saveDialog()" name="email" placeholder="Váš e-mail...">
+			<h5>Předmět</h5>
+			<textarea name="subject" id="form-subject" onchange="saveDialog()" placeholder="Napiště zprávu.."></textarea>
+			<input type="submit" value="Odeslat">
+		</form>
+	</section>
+
+	<section id="contact-us" onclick="toggleDialog()">
+		Kontaktujte nás!
+	</section>
+
+<script>
+	var nav = document.getElementById("nav");
+	var sticky = nav.offsetTop;
+	window.onscroll = function() {stickMenu(nav, sticky)};
+</script>
+</body>
+</html>
